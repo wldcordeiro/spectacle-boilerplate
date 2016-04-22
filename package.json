@@ -16,6 +16,9 @@
     "normalize.css": "3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
+    "lodash": "^4.11.0",
+    "rx": "^4.1.0",
+    "rx-dom-ajax": "^7.0.0",
     "spectacle": "^1.0.0"
   },
   "devDependencies": {
