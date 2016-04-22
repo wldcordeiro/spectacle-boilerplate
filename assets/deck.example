@@ -1,28 +1,21 @@
-return (
-  <Deck transition={['zoom','slide']} transitionDuration={800}>
-    <Slide bgColor="primary">
-      <Heading size={1} fit caps>
-        React Presentations
-      </Heading>
-      <Heading size={2} fit caps>
-        Written In React
-      </Heading>
-    </Slide>
-    <Slide bgColor="black">
-      <Heading size={1} fit textColor="primary" textFont="secondary">
-        Wait What?
-      </Heading>
-    </Slide>
-    <Slide bgColor="primary" textColor="black" align="center top">
-      <Heading size={1} textColor="black" textFont="primary">
-        Thats right
-      </Heading>
-      <List>
-        <ListItem>Inline style based theme system</ListItem>
-        <ListItem>Autofit Text</ListItem>
-        <ListItem>react-router navigation</ListItem>
-        <ListItem>PDF Export</ListItem>
-      </List>
-    </Slide>
-  </Deck>
-)
+return h(Deck, {transition: ['zoom', 'slide'], transitionDuration: 800}, [
+  h(Slide, {bgColor: 'primary'}, [
+    h(Heading, {size: 1, fit: true, caps: true}, 'React Presentations'),
+    h(Heading, {size: 2, fit: true, caps: true}, 'Written in React'),
+  ]),
+  h(Slide, {bgColor: 'black'},
+    h(Heading, {
+      size: 1,
+      textColor: 'primary',
+      textFont: 'secondary',
+      }, 'Wait What?')),
+  h(Slide, {bgColor: 'primary', textColor: 'black', align: 'center top'}, [
+    h(Heading, {size: 1, textColor: 'black', textFont: 'primary'}, 'Thats right'),
+    h(List, [
+      h(ListItem, 'Inline style based theme system'),
+      h(ListItem, 'Autofit Text'),
+      h(ListItem, 'react-router navigation'),
+      h(ListItem, 'PDF Export'),
+    ]),
+  ]),
+]);

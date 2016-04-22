@@ -33,7 +33,7 @@ export function h(tagName, properties, children = []) {
     if (typeof tagName === 'string') {
         tag = parseTag(tagName, props);
     } else if (typeof tagName === 'undefined') {
-        throw new Error('tag_name argument cannot be undefined.');
+        throw new Error('tagName argument cannot be undefined.');
     } else {
         tag = tagName;
     }

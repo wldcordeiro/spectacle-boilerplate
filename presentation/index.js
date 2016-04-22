@@ -16,7 +16,7 @@ import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from 'spectacle/lib/themes/default';
 
 // Import custom component
-import Interactive from '../assets/interactive';
+import {Interactive} from './interactive';
 
 // Require CSS
 require('normalize.css');
@@ -36,7 +36,7 @@ const theme = createTheme({
     primary: '#ff4081',
 });
 
-export function Presentation() {
+export function Presentation(props) {
     return h(Spectacle, {theme}, [
         h(Deck, {
             transition: ['zoom', 'slide'],
@@ -210,7 +210,7 @@ paragraph text and most other markdown syntax
                 h(Appear, h(ListItem, 'And...')),
             ])),
             h(Slide, {
-                transition: 'slide',
+                transition: ['slide'],
                 bgColor: 'primary',
             }, [
                 h(Heading, {
@@ -219,7 +219,7 @@ paragraph text and most other markdown syntax
                     fit: true,
                     textColor: 'tertiary',
                 }, 'Your presentations are interactive'),
-                h(Interactive),
+                h(Interactive, {count: props.count}),
             ]),
             h(Slide, {
                 transition: ['spin', 'slide'],
